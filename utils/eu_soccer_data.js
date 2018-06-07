@@ -104,14 +104,14 @@ let getTeam = async (teamId) => {
 
     if (existing) {
       await existing.update({
-        data: data,
+        profile: data,
         last_updated: Date.now(),
       }).exec();
       console.log('team updated...!');
     } else {
       let dbData = await Soccer.team.create({
         team_id: teamId,
-        data: data,
+        profile: data,
       });
       console.log('team saved...!');
     }
@@ -144,14 +144,14 @@ let getPlayers = async (team) => {
       });
       if (existing) {
         await existing.update({
-          data: data,
+          profile: data,
           last_updated: Date.now(),
         }).exec();
         console.log('player updated!');
       } else {
         let dbData = await Soccer.player.create({
           player_id: playerId,
-          data: data,
+          profile: data,
         });
         console.log('player saved!');
       }

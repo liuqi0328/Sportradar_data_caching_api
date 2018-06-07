@@ -8,7 +8,8 @@ let SoccerLeagueSchema = new Schema({
     type: String,
     required: true,
   },
-  data: Schema.Types.Mixed,
+  info: Schema.Types.Mixed,
+  seasons: Schema.Types.Mixed,
   created_at: {
     type: Date,
     default: Date.now,
@@ -24,7 +25,7 @@ let SoccerTeamSchema = new Schema({
     type: String,
     required: true,
   },
-  data: Schema.Types.Mixed,
+  profile: Schema.Types.Mixed,
   created_at: {
     type: Date,
     default: Date.now,
@@ -40,7 +41,7 @@ let SoccerPlayerSchema = new Schema({
     type: String,
     required: true,
   },
-  data: Schema.Types.Mixed,
+  profile: Schema.Types.Mixed,
   created_at: {
     type: Date,
     default: Date.now,
