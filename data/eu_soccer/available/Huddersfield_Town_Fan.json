@@ -1,0 +1,12 @@
+{
+  "teamName": "Huddersfield Town",
+  "skillId": "amzn1.ask.skill.dc175372-1bab-44e0-ae2a-327b51315fc1",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "teamId": "sr:competitor:59",
+  "leagueId": "sr:tournament:17",
+  "abbreviation": "HUD",
+  "country_code": "ENG",
+  "APP_NAME": "2018_Alexa_Huddersfield_Town_Fan"
+}

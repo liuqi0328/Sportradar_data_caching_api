@@ -1,0 +1,12 @@
+{
+  "teamName": "Leicester City",
+  "skillId": "amzn1.ask.skill.acb85d1a-7239-42b6-87dc-5d7c011d9f08",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "teamId": "sr:competitor:31",
+  "leagueId": "sr:tournament:17",
+  "abbreviation": "LEI",
+  "country_code": "ENG",
+  "APP_NAME": "2018_Alexa_Leicester_City_Fan"
+}

@@ -1,0 +1,58 @@
+Manchester City
+Manchester United
+West Ham United
+Everton FC
+Southampton FC
+Chelsea FC
+Arsenal
+Newcastle United
+Leicester City
+Liverpool FC
+Tottenham Hotspur
+West Bromwich Albion
+Crystal Palace
+Watford FC
+Stoke City
+Burnley FC
+Swansea City
+Brighton & Hove Albion FC
+AFC Bournemouth
+Huddersfield Town
+Villarreal CF
+Las Palmas UD
+CD Alaves
+Malaga CF
+Deportivo La Coruna
+Athletic Bilbao
+Real Sociedad
+Valencia CF
+FC Barcelona
+Celta de Vigo
+Espanyol Barcelona
+Real Madrid
+Real Betis Balompie
+Sevilla FC
+Atletico Madrid
+UD Levante
+Getafe CF
+SD Eibar
+Girona FC
+CD Leganes
+SC Freiburg
+FC Cologne
+VfB Stuttgart
+Hamburger SV
+Eintracht Frankfurt
+Borussia Dortmund
+Bayer Leverkusen
+FC Schalke 04
+Werder Bremen
+Hertha BSC
+VfL Wolfsburg
+Monchengladbach
+Bayern Munich
+Hannover 96
+FSV Mainz 05
+1899 Hoffenheim
+FC Augsburg
+RB Leipzig

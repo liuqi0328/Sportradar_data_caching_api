@@ -1,0 +1,12 @@
+{
+  "teamName": "West Bromwich Albion",
+  "skillId": "amzn1.ask.skill.b7bacde9-ab8f-41df-9f2c-65f0aa60cc5f",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "teamId": "sr:competitor:8",
+  "leagueId": "sr:tournament:17",
+  "abbreviation": "WBA",
+  "country_code": "ENG",
+  "APP_NAME": "2018_Alexa_West_Bromwich_Albion_Fan"
+}

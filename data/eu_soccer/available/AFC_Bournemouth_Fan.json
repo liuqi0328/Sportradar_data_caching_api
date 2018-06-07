@@ -1,0 +1,12 @@
+{
+  "teamName": "AFC Bournemouth",
+  "skillId": "amzn1.ask.skill.c8ce46f0-becd-43ec-b75d-59f4091b76d1",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "teamId": "sr:competitor:60",
+  "leagueId": "sr:tournament:17",
+  "abbreviation": "BOU",
+  "country_code": "ENG",
+  "APP_NAME": "2018_Alexa_AFC_Bournemouth_Fan"
+}

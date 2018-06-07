@@ -1,0 +1,12 @@
+{
+  "teamName": "Villarreal CF",
+  "skillId": "amzn1.ask.skill.89788b6c-c386-457f-8629-46a94b793ca3",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "leagueId": "sr:tournament:8",
+  "teamId": "sr:competitor:2819",
+  "abbreviation": "VIL",
+  "country_code": "ESP",
+  "APP_NAME": "2018_Alexa_Villarreal_CF_Fan"
+}

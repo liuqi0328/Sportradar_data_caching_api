@@ -1,0 +1,12 @@
+{
+  "teamName": "Southampton FC",
+  "skillId": "amzn1.ask.skill.0aec05de-1862-45df-9de5-3c1446830843",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "teamId": "sr:competitor:45",
+  "leagueId": "sr:tournament:17",
+  "abbreviation": "SOU",
+  "country_code": "ENG",
+  "APP_NAME": "2018_Alexa_Southampton_FC_Fan"
+}

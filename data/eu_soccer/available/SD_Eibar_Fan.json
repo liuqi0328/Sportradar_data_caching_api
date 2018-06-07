@@ -1,0 +1,12 @@
+{
+  "teamName": "SD Eibar",
+  "skillId": "amzn1.ask.skill.93800d05-db4e-408f-975d-c27156fe91fc",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "leagueId": "sr:tournament:8",
+  "teamId": "sr:competitor:2839",
+  "abbreviation": "EIB",
+  "country_code": "ESP",
+  "APP_NAME": "2018_Alexa_SD_Eibar_Fan"
+}

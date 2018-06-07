@@ -1,0 +1,12 @@
+{
+  "teamName": "Tottenham Hotspur",
+  "skillId": "amzn1.ask.skill.c082056c-4701-43d6-b24f-21dd661a4f4f",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "teamId": "sr:competitor:33",
+  "leagueId": "sr:tournament:17",
+  "abbreviation": "TOT",
+  "country_code": "ENG",
+  "APP_NAME": "2018_Alexa_Tottenham_Hotspur_Fan"
+}

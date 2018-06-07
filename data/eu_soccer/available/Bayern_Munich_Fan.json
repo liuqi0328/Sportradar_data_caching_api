@@ -1,0 +1,12 @@
+{
+  "teamName": "Bayern Munich",
+  "skillId": "amzn1.ask.skill.58130db0-4664-40a9-ab22-fda2f11f4167",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "leagueId": "sr:tournament:35",
+  "teamId": "sr:competitor:2672",
+  "abbreviation": "FCB",
+  "country_code": "DEU",
+  "APP_NAME": "2018_Alexa_Bayern_Munich_Fan"
+}

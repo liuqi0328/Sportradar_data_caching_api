@@ -1,0 +1,12 @@
+{
+  "teamName": "FC Cologne",
+  "skillId": "amzn1.ask.skill.c7f71903-11f0-4c8c-9723-e13eebbcd0a1",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "teamId": "sr:competitor:2671",
+  "leagueId": "sr:tournament:35",
+  "country_code": "DEU",
+  "abbreviation": "KOE",
+  "APP_NAME": "2018_Alexa_FC_Cologne_Fan"
+}

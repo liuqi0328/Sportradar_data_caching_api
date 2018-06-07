@@ -1,0 +1,12 @@
+{
+  "teamName": "Manchester United",
+  "skillId": "amzn1.ask.skill.d1127b99-429a-43db-ac38-8d4d254a95e5",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "teamId": "sr:competitor:35",
+  "leagueId": "sr:tournament:17",
+  "abbreviation": "MUN",
+  "country_code": "ENG",
+  "APP_NAME": "2018_Alexa_Manchester_United_Fan"
+}

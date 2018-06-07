@@ -1,0 +1,12 @@
+{
+  "teamName": "Valencia CF",
+  "skillId": "amzn1.ask.skill.7fb56381-d486-473c-b307-3698796a13dd",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "leagueId": "sr:tournament:8",
+  "teamId": "sr:competitor:2828",
+  "abbreviation": "VCF",
+  "country_code": "ESP",
+  "APP_NAME": "2018_Alexa_Valencia_CF_Fan"
+}

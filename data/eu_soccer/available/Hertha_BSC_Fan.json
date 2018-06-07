@@ -1,0 +1,12 @@
+{
+  "teamName": "Hertha BSC",
+  "skillId": "amzn1.ask.skill.27135023-7288-49df-b65c-7a8f27970990",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "leagueId": "sr:tournament:35",
+  "teamId": "sr:competitor:2528",
+  "abbreviation": "BSC",
+  "country_code": "DEU",
+  "APP_NAME": "2018_Alexa_Hertha_BSC_Fan"
+}

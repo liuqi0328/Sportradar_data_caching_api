@@ -1,0 +1,12 @@
+{
+  "teamName": "Atletico Madrid",
+  "skillId": "amzn1.ask.skill.6b1906f4-a202-47c8-837f-af597d3b5863",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "leagueId": "sr:tournament:8",
+  "teamId": "sr:competitor:2836",
+  "abbreviation": "ATM",
+  "country_code": "ESP",
+  "APP_NAME": "2018_Alexa_Atletico_Madrid_Fan"
+}

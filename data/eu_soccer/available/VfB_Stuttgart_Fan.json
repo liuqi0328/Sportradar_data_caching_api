@@ -1,0 +1,12 @@
+{
+  "teamName": "VfB Stuttgart",
+  "skillId": "amzn1.ask.skill.daab7ca6-ab70-4c43-8bf2-bb88e2277a9e",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "leagueId": "sr:tournament:35",
+  "teamId": "sr:competitor:2677",
+  "abbreviation": "VFB",
+  "country_code": "DEU",
+  "APP_NAME": "2018_Alexa_VfB_Stuttgart_Fan"
+}

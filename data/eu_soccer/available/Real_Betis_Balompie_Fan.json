@@ -1,0 +1,12 @@
+{
+  "teamName": "Real Betis Balompie",
+  "skillId": "amzn1.ask.skill.24022f18-db25-495e-a9e7-dce88d8bbdf6",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "leagueId": "sr:tournament:8",
+  "teamId": "sr:competitor:2816",
+  "abbreviation": "RBB",
+  "country_code": "ESP",
+  "APP_NAME": "2018_Alexa_Real_Betis_Balompie_Fan"
+}

@@ -1,0 +1,12 @@
+{
+  "teamName": "Monchengladbach",
+  "skillId": "amzn1.ask.skill.af4a5016-f6cf-46ac-8554-aace557354d9",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "leagueId": "sr:tournament:35",
+  "teamId": "sr:competitor:2527",
+  "abbreviation": "BMG",
+  "country_code": "DEU",
+  "APP_NAME": "2018_Alexa_Monchengladbach_Fan"
+}

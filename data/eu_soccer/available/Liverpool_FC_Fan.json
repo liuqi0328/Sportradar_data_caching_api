@@ -1,0 +1,12 @@
+{
+  "teamName": "Liverpool FC",
+  "skillId": "amzn1.ask.skill.c2a0d690-88b7-45e4-a0d0-f7780d724755",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "teamId": "sr:competitor:44",
+  "leagueId": "sr:tournament:17",
+  "abbreviation": "LIV",
+  "country_code": "ENG",
+  "APP_NAME": "2018_Alexa_Liverpool_FC_Fan"
+}

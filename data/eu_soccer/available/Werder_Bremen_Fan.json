@@ -1,0 +1,12 @@
+{
+  "teamName": "Werder Bremen",
+  "skillId": "amzn1.ask.skill.5cea800d-eac3-4d10-baef-51bb69eef635",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "leagueId": "sr:tournament:35",
+  "teamId": "sr:competitor:2534",
+  "abbreviation": "SVW",
+  "country_code": "DEU",
+  "APP_NAME": "2018_Alexa_Werder_Bremen_Fan"
+}

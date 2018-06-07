@@ -1,0 +1,12 @@
+{
+  "teamName": "Deportivo La Coruna",
+  "skillId": "amzn1.ask.skill.111835d2-4e7a-4f17-9e09-a203147d8e66",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "leagueId": "sr:tournament:8",
+  "teamId": "sr:competitor:2832",
+  "abbreviation": "COR",
+  "country_code": "ESP",
+  "APP_NAME": "2018_Alexa_Deportivo_La_Coruna_Fan"
+}

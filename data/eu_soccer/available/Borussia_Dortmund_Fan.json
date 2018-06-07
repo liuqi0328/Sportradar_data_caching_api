@@ -1,0 +1,12 @@
+{
+  "teamName": "Borussia Dortmund",
+  "skillId": "amzn1.ask.skill.89dbd54d-c9c2-4cf1-af31-3263a4e53575",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "leagueId": "sr:tournament:35",
+  "teamId": "sr:competitor:2673",
+  "abbreviation": "BVB",
+  "country_code": "DEU",
+  "APP_NAME": "2018_Alexa_Borussia_Dortmund_Fan"
+}

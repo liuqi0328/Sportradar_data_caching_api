@@ -1,0 +1,12 @@
+{
+  "teamName": "Real Madrid",
+  "skillId": "amzn1.ask.skill.7e5d0e69-ed5a-4a59-be7f-ab3cd01813e9",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "leagueId": "sr:tournament:8",
+  "teamId": "sr:competitor:2829",
+  "abbreviation": "MAD",
+  "country_code": "ESP",
+  "APP_NAME": "2018_Alexa_Real_Madrid_Fan"
+}

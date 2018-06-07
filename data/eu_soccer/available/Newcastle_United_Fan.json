@@ -1,0 +1,12 @@
+{
+  "teamName": "Newcastle United",
+  "skillId": "amzn1.ask.skill.c18c0ce7-ec4a-4a95-811a-a7bb29b9a152",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "teamId": "sr:competitor:39",
+  "leagueId": "sr:tournament:17",
+  "abbreviation": "NEW",
+  "country_code": "ENG",
+  "APP_NAME": "2018_Alexa_Newcastle_United_Fan"
+}

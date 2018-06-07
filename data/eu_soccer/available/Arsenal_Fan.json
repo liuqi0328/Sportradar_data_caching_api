@@ -1,0 +1,12 @@
+{
+  "teamName": "Arsenal",
+  "skillId": "amzn1.ask.skill.12620303-80e2-40d0-ad1f-b472ca3692c5",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "teamId": "sr:competitor:42",
+  "leagueId": "sr:tournament:17",
+  "abbreviation": "ARS",
+  "country_code": "ENG",
+  "APP_NAME": "2018_Alexa_Arsenal_Fan"
+}

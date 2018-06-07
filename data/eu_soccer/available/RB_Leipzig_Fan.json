@@ -1,0 +1,12 @@
+{
+  "teamName": "RB Leipzig",
+  "skillId": "amzn1.ask.skill.5728201f-633e-41df-b77a-eaf3714d0583",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "leagueId": "sr:tournament:35",
+  "teamId": "sr:competitor:36360",
+  "abbreviation": "RBL",
+  "country_code": "DEU",
+  "APP_NAME": "2018_Alexa_RB_Leipzig_Fan"
+}

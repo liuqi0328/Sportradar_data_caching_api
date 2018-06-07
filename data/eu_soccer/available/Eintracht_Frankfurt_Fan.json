@@ -1,0 +1,12 @@
+{
+  "teamName": "Eintracht Frankfurt",
+  "skillId": "amzn1.ask.skill.51c1c534-c5ee-4225-a1bd-75a09639277a",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "leagueId": "sr:tournament:35",
+  "teamId": "sr:competitor:2674",
+  "abbreviation": "SGE",
+  "country_code": "DEU",
+  "APP_NAME": "2018_Alexa_Eintracht_Frankfurt_Fan"
+}

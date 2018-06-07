@@ -1,0 +1,12 @@
+{
+  "teamName": "West Ham United",
+  "skillId": "amzn1.ask.skill.63c1d7ac-37ad-4bef-a0b6-62d7a80664a5",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "teamId": "sr:competitor:37",
+  "leagueId": "sr:tournament:17",
+  "abbreviation": "WHU",
+  "country_code": "ENG",
+  "APP_NAME": "2018_Alexa_West_Ham_United_Fan"
+}

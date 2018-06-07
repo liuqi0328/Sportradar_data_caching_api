@@ -1,0 +1,12 @@
+{
+  "teamName": "Hamburger SV",
+  "skillId": "amzn1.ask.skill.4ce887bb-0f99-4322-b128-d16bb5568539",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "leagueId": "sr:tournament:35",
+  "teamId": "sr:competitor:2676",
+  "abbreviation": "HSV",
+  "country_code": "DEU",
+  "APP_NAME": "2018_Alexa_Hamburger_SV_Fan"
+}

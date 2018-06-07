@@ -1,0 +1,12 @@
+{
+  "teamName": "Burnley FC",
+  "skillId": "amzn1.ask.skill.4fcc6b6c-0e57-46fe-bc22-b970a3058830",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "teamId": "sr:competitor:6",
+  "leagueId": "sr:tournament:17",
+  "abbreviation": "BUR",
+  "country_code": "ENG",
+  "APP_NAME": "2018_Alexa_Burnley_FC_Fan"
+}

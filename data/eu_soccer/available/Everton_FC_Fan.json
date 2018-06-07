@@ -1,0 +1,12 @@
+{
+  "teamName": "Everton FC",
+  "skillId": "amzn1.ask.skill.d9fde5c4-d70b-41eb-b815-91057fbe4443",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "teamId": "sr:competitor:48",
+  "leagueId": "sr:tournament:17",
+  "abbreviation": "EVE",
+  "country_code": "ENG",
+  "APP_NAME": "2018_Alexa_Everton_FC_Fan"
+}

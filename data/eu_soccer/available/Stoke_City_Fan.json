@@ -1,0 +1,12 @@
+{
+  "teamName": "Stoke City",
+  "skillId": "amzn1.ask.skill.67fa2dbc-14ce-47c5-b94d-e77861c8d00e",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "teamId": "sr:competitor:29",
+  "leagueId": "sr:tournament:17",
+  "abbreviation": "STK",
+  "country_code": "ENG",
+  "APP_NAME": "2018_Alexa_Stoke_City_Fan"
+}

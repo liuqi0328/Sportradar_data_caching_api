@@ -1,0 +1,12 @@
+{
+  "teamName": "Chelsea FC",
+  "skillId": "amzn1.ask.skill.8a907500-9066-49be-8c0b-77ef7e65ccb4",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "teamId": "sr:competitor:38",
+  "leagueId": "sr:tournament:17",
+  "abbreviation": "CHE",
+  "country_code": "ENG",
+  "APP_NAME": "2018_Alexa_Chelsea_FC_Fan"
+}

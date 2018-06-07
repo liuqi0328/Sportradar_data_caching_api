@@ -1,0 +1,12 @@
+{
+  "teamName": "VfL Wolfsburg",
+  "skillId": "amzn1.ask.skill.d1410dea-ac38-4360-a717-3cbf0a9adcaa",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "leagueId": "sr:tournament:35",
+  "teamId": "sr:competitor:2524",
+  "abbreviation": "WOB",
+  "country_code": "DEU",
+  "APP_NAME": "2018_Alexa_VfL_Wolfsburg_Fan"
+}

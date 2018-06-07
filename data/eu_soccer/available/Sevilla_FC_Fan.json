@@ -1,0 +1,12 @@
+{
+  "teamName": "Sevilla FC",
+  "skillId": "amzn1.ask.skill.d9605dea-d474-4bb7-9643-f56f9c238188",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "leagueId": "sr:tournament:8",
+  "teamId": "sr:competitor:2833",
+  "abbreviation": "SFC",
+  "country_code": "ESP",
+  "APP_NAME": "2018_Alexa_Sevilla_FC_Fan"
+}

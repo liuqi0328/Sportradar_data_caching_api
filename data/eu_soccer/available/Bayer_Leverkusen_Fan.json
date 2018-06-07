@@ -1,0 +1,12 @@
+{
+  "teamName": "Bayer Leverkusen",
+  "skillId": "amzn1.ask.skill.5d6f33a1-c652-4032-8097-744f556157bb",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "leagueId": "sr:tournament:35",
+  "teamId": "sr:competitor:2681",
+  "abbreviation": "B04",
+  "country_code": "DEU",
+  "APP_NAME": "2018_Alexa_Bayer_Leverkusen_Fan"
+}

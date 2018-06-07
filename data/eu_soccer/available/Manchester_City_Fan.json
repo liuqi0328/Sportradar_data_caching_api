@@ -1,0 +1,12 @@
+{
+  "teamName": "Manchester City",
+  "skillId": "amzn1.ask.skill.5c9fb4cc-1d4e-4458-b939-4052cbda46b4",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "teamId": "sr:competitor:17",
+  "leagueId": "sr:tournament:17",
+  "abbreviation": "MCI",
+  "country_code": "ENG",
+  "APP_NAME": "2018_Alexa_Manchester_City_Fan"
+}

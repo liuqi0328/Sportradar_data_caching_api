@@ -1,0 +1,12 @@
+{
+  "teamName": "Espanyol Barcelona",
+  "skillId": "amzn1.ask.skill.3eae5cac-5166-45b3-89ad-3eacdafffee5",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "leagueId": "sr:tournament:8",
+  "teamId": "sr:competitor:2814",
+  "abbreviation": "ESP",
+  "country_code": "ESP",
+  "APP_NAME": "2018_Alexa_Espanyol_Barcelona_Fan"
+}

@@ -1,0 +1,12 @@
+{
+  "teamName": "Girona FC",
+  "skillId": "amzn1.ask.skill.5bda710e-b035-42ed-973a-b30d8e51486f",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "leagueId": "sr:tournament:8",
+  "teamId": "sr:competitor:24264",
+  "abbreviation": "GIR",
+  "country_code": "ESP",
+  "APP_NAME": "2018_Alexa_Girona_FC_Fan"
+}

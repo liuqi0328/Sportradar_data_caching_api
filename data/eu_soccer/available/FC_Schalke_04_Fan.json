@@ -1,0 +1,12 @@
+{
+  "teamName": "FC Schalke 04",
+  "skillId": "amzn1.ask.skill.3b964c62-c5ca-476a-8f11-c91a74c88a27",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "leagueId": "sr:tournament:35",
+  "teamId": "sr:competitor:2530",
+  "abbreviation": "S04",
+  "country_code": "DEU",
+  "APP_NAME": "2018_Alexa_FC_Schalke_04_Fan"
+}

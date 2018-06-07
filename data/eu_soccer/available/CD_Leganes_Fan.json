@@ -1,0 +1,12 @@
+{
+  "teamName": "CD Leganes",
+  "skillId": "amzn1.ask.skill.5a6c3297-91b3-45c0-bbba-9fcdce8dfbcd",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "leagueId": "sr:tournament:8",
+  "teamId": "sr:competitor:2845",
+  "abbreviation": "LEG",
+  "country_code": "ESP",
+  "APP_NAME": "2018_Alexa_CD_Leganes_Fan"
+}

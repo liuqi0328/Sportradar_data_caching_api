@@ -1,0 +1,12 @@
+{
+  "teamName": "Athletic Bilbao",
+  "skillId": "amzn1.ask.skill.a11a2751-ae83-4467-bb98-ad32a0852ee9",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "leagueId": "sr:tournament:8",
+  "teamId": "sr:competitor:2825",
+  "abbreviation": "ATH",
+  "country_code": "ESP",
+  "APP_NAME": "2018_Alexa_Athletic_Bilbao_Fan"
+}

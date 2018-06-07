@@ -1,0 +1,12 @@
+{
+  "teamName": "Hannover 96",
+  "skillId": "amzn1.ask.skill.8ed458c5-c007-44ba-96a3-3de9d9b0f2cd",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "leagueId": "sr:tournament:35",
+  "teamId": "sr:competitor:2541",
+  "abbreviation": "H96",
+  "country_code": "DEU",
+  "APP_NAME": "2018_Alexa_Hannover_96_Fan"
+}

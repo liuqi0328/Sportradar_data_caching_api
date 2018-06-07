@@ -1,0 +1,12 @@
+{
+  "teamName": "FC Augsburg",
+  "skillId": "amzn1.ask.skill.adb8979c-aedb-4347-917f-e48a072150d7",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "leagueId": "sr:tournament:35",
+  "teamId": "sr:competitor:2600",
+  "abbreviation": "FCA",
+  "country_code": "DEU",
+  "APP_NAME": "2018_Alexa_FC_Augsburg_Fan"
+}

@@ -1,0 +1,12 @@
+{
+  "teamName": "SC Freiburg",
+  "skillId": "amzn1.ask.skill.42cbaae7-b07b-4f98-a8a2-eae7a88ab870",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "leagueId": "sr:tournament:35",
+  "teamId": "sr:competitor:2538",
+  "abbreviation": "SCF",
+  "country_code": "DEU",
+  "APP_NAME": "2018_Alexa_SC_Freiburg_Fan"
+}

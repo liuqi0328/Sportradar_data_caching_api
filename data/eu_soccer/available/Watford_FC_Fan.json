@@ -1,0 +1,12 @@
+{
+  "teamName": "Watford FC",
+  "skillId": "amzn1.ask.skill.7c14018d-7171-4aa8-9d30-88c97350c60c",
+  "clientId": "",
+  "clientSecret": "",
+  "dmpSkillId": "",
+  "teamId": "sr:competitor:24",
+  "leagueId": "sr:tournament:17",
+  "abbreviation": "WAT",
+  "country_code": "ENG",
+  "APP_NAME": "2018_Alexa_Watford_FC_Fan"
+}
