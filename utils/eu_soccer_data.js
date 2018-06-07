@@ -51,11 +51,12 @@ exports.savePlayers = async () => {
 };
 
 /**
- * Based on the option, send API requests sequentially to get data and store in the
- * database.
+ * Based on the option, send API requests sequentially to get data and store in
+ * the database.
  *
  * @param {string}   option   Must be 'player' or 'team'.
- * @param {string[]} teams    When option = 'team', teams is an array of team IDs.
+ * @param {string[]} teams    When option = 'team', teams is an array of team
+ *                            IDs.
  *                            When option = 'player', teams is an array of teams
  *                            from the database.
  * @param {number}   counter  Integer passed in as the index for teams/team IDs.
