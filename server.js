@@ -35,17 +35,21 @@ db.once('open', () => {
     let apiKey = req.query.api_key;
     console.log('api key: ', apiKey);
     let requestUrl = req.originalUrl;
-    if (requestUrl.startsWith('/api/v1/api_keys/')) {
-      let savedApiKeys = await ApiKey.find();
-      if (!apiKey) {
-        res.sendStatus(400);
-      } else if (!savedApiKeys.includes(apiKey) || apiKey === masterKey) {
+
+    console.log(requestUrl.startsWith('/api/v1/api_keys'));
+    if (requestUrl.startsWith('/api/v1/api_keys')) {
+      if (apiKey !== masterKey) {
         res.sendStatus(401);
       } else {
         next();
       }
     } else {
-      if (apiKey !== masterKey) {
+      let savedApiKeys = await ApiKey.find();
+      if (!apiKey) {
+        res.sendStatus(400);
+      } else if (apiKey === masterKey) {
+        next();
+      } else if (!savedApiKeys.includes(apiKey)) {
         res.sendStatus(401);
       } else {
         next();
