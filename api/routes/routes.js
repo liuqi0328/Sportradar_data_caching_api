@@ -1,11 +1,15 @@
 'use strict';
 
+const apiKey = require('../controllers/api_key');
 const euSoccer = require('../controllers/eu_soccer_controllers');
 
 const baseApiUrl = '/api/v1/';
 
 module.exports = (app) => {
   app.route(baseApiUrl);
+  app.route(baseApiUrl + 'api_keys/')
+    .get(apiKey.index)
+    .post(apiKey.create);
   app.route(baseApiUrl + 'nba/');
 
   app.route(baseApiUrl + 'nfl/');

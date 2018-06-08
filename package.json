@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "clean": "rm -rf node_modules",
     "reinstall": "npm run clean && npm install"
   },
@@ -16,6 +16,10 @@
     "express": "^4.16.3",
     "mongoose": "^5.1.4",
     "request": "^2.87.0",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "uniqid": "^5.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
   }
 }

@@ -58,9 +58,9 @@ exports.saveLeagues = async () => {
   return;
 };
 
-exports.saveTeams = () => {
+exports.saveTeams = async () => {
   let teamFiles = fs.readdirSync(EUSoccerDataFilePath + 'available/');
-  console.log(teamFiles.length);
+  console.log('save teams length: ', teamFiles.length);
   let teamIds = [];
   teamFiles.forEach(async (file) => {
     if (file === '.DS_Store') return;
@@ -69,15 +69,32 @@ exports.saveTeams = () => {
     teamIds.push(teamId);
   });
   let counter = 0;
-  startDownload('team', teamIds, counter);
+  await startDownload('team', teamIds, counter);
   return;
 };
 
 exports.savePlayers = async () => {
   let teams = await Soccer.team.find();
-  console.log(teams.length);
+
+  /**
+   * TODO: Determine whether to check the number of data files or pass in
+   *       environment variable for the number of teams.
+   */
+  let teamFiles = fs.readdirSync(EUSoccerDataFilePath + 'available/');
+  let lengthCheck;
+  if (teamFiles.includes('.DS_Store')) {
+    lengthCheck = teamFiles.length - 1;
+  } else {
+    lengthCheck = teamFiles.length;
+  }
+  while (teams.length !== lengthCheck) {
+    console.log('waiting for teams to be saved...');
+    teams = await Soccer.team.find();
+  }
+
+  console.log('save players length: ', teams.length);
   let counter = 0;
-  startDownload('player', teams, counter);
+  await startDownload('player', teams, counter);
   return;
 };
 
@@ -160,7 +177,7 @@ let getTeam = async (teamId) => {
 };
 
 let getPlayers = async (team) => {
-  let players = team.data.players;
+  let players = team.profile.players;
   for (let i = 0; i < players.length; i++) {
     let player = players[i];
     console.log(player);
@@ -175,10 +192,13 @@ let getPlayers = async (team) => {
       let data = await rp(options);
       // console.log('data: ', data);
       let playerId = data.player.id;
-      let existing = await Soccer.player.findOne({player_id: playerId}, (err, player) => {
-        if (err) return console.error(err.message);
-        if (player) return player;
-      });
+      let existing = await Soccer.player.findOne(
+        {player_id: playerId},
+        (err, player) => {
+          if (err) return console.error(err.message);
+          if (player) return player;
+        }
+      );
       if (existing) {
         await existing.update({
           profile: data,
