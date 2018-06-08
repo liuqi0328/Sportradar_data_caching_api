@@ -70,14 +70,14 @@ let startDownload = async (option, teams, counter) => {
 
   switch (option) {
     case 'team': {
-      let teamAdded = await getTeam(team);
+      await getTeam(team);
       counter += 1;
       console.log(counter);
       startDownload('team', teams, counter);
       break;
     }
     case 'player': {
-      let playersAdded = await getPlayers(team);
+      await getPlayers(team);
       counter += 1;
       console.log(counter);
       startDownload('player', teams, counter);
@@ -109,7 +109,7 @@ let getTeam = async (teamId) => {
       }).exec();
       console.log('team updated...!');
     } else {
-      let dbData = await Soccer.team.create({
+      await Soccer.team.create({
         team_id: teamId,
         profile: data,
       });
@@ -149,7 +149,7 @@ let getPlayers = async (team) => {
         }).exec();
         console.log('player updated!');
       } else {
-        let dbData = await Soccer.player.create({
+        await Soccer.player.create({
           player_id: playerId,
           profile: data,
         });
