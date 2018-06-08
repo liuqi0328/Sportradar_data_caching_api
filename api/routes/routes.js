@@ -12,7 +12,7 @@ module.exports = (app) => {
 
   app.route(baseApiUrl + 'soccer/eu/');
   app.route(baseApiUrl + 'soccer/eu/leagues/')
-    .get(euSoccer.leagues);
+    .get(euSoccer.getLeagues);
   app.route(baseApiUrl + 'soccer/eu/teams/:teamId/');
   app.route(baseApiUrl + 'soccer/eu/players/');
   app.route(baseApiUrl + 'soccer/eu/players/:playerId');

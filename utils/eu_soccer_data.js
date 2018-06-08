@@ -20,13 +20,42 @@ exports.saveLeagues = async () => {
     let leagues = data.tournaments;
     leagues.forEach(async (league) => {
       console.log('league input: ', league);
-      let dbData = await Soccer.league.create({data: league});
-      console.log('saved data: ', dbData);
+      let seasonUrl = sportradarBaseUrl + '/tournaments/' + league.id +
+        '/seasons.json?api_key=' + API_KEY;
+      let seasonsOptions = {
+        json: true,
+        uri: seasonUrl,
+      };
+      let seasonData;
+      try {
+        let result = await rp(seasonsOptions);
+        seasonData = result.seasons;
+      } catch (err) {
+        console.log('league seasons api err...!');
+        console.error(err.message);
+        seasonData = [];
+      }
+      let existing = await Soccer.league.findOne({league_id: league.id});
+      if (existing) {
+        await existing.update({
+          info: data,
+          season: seasonData,
+        }).exec();
+        console.log('league updated...!');
+      } else {
+        let dbData = await Soccer.league.create({
+          league_id: league.id,
+          info: league,
+          seasons: seasonData,
+        });
+        console.log('saved data: ', dbData);
+      }
     });
   } catch (err) {
     console.log('league data save error...!');
     console.error(err.message);
   }
+  return;
 };
 
 exports.saveTeams = () => {
@@ -41,6 +70,7 @@ exports.saveTeams = () => {
   });
   let counter = 0;
   startDownload('team', teamIds, counter);
+  return;
 };
 
 exports.savePlayers = async () => {
@@ -48,7 +78,14 @@ exports.savePlayers = async () => {
   console.log(teams.length);
   let counter = 0;
   startDownload('player', teams, counter);
+  return;
 };
+
+/**
+ * =============================================================================
+ *                               HELPER FUNCTIONS
+ * =============================================================================
+ */
 
 /**
  * Based on the option, send API requests sequentially to get data and store in

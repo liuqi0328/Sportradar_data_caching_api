@@ -7,7 +7,7 @@ const port = process.env.PORT || 1337;
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const apiRoutes = require('./api/routes/routes');
-const euSoccerData = require('./utils/eu_soccer_data');
+const downloadAPI = require('./utils/download');
 
 let app = express();
 
@@ -32,12 +32,13 @@ db.once('open', () => {
   app.listen(port);
 
   setInterval(() => {
-    console.log('test');
+    console.log(`download started on ${Date.now()}...!`);
+    downloadAPI();
   }, 86400000); // 1 day in ms
 
-  // euSoccerData.saveLeagues();
-  euSoccerData.saveTeams();
-  // euSoccerData.savePlayers();
+  // Initial download for all of the data from Sportradar API
+  console.log('initial download started...!');
+  downloadAPI();
 
   console.log(`Server started on: ${port}`);
 });
