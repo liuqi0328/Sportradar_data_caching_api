@@ -10,6 +10,10 @@ let ApiKeySchema = new Schema({
     default: uniqid(),
     unique: true,
   },
+  account: {
+    type: String,
+    default: 'freshdigitalgroup',
+  },
   created_at: {
     type: Date,
     default: Date.now,
