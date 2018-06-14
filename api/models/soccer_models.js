@@ -26,6 +26,8 @@ let SoccerTeamSchema = new Schema({
     required: true,
   },
   profile: Schema.Types.Mixed,
+  schedule: Schema.Types.Mixed,
+  results: Schema.Types.Mixed,
   created_at: {
     type: Date,
     default: Date.now,

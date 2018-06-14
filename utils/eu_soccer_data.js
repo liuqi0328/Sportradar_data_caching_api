@@ -147,31 +147,67 @@ let getTeam = async (teamId) => {
     json: true,
     uri: Url,
   };
+  let data;
   try {
-    let data = await rp(options);
-    // console.log('data: ', data);
-    let teamId = data.team.id;
-    let existing = await Soccer.team.findOne({team_id: teamId}, (err, team) => {
-      if (err) return console.error(err.message);
-      if (team) return team;
-    });
-
-    if (existing) {
-      await existing.update({
-        profile: data,
-        last_updated: Date.now(),
-      }).exec();
-      console.log('team updated...!');
-    } else {
-      await Soccer.team.create({
-        team_id: teamId,
-        profile: data,
-      });
-      console.log('team saved...!');
-    }
+    data = await rp(options);
   } catch (err) {
-    console.log('team data save error...!');
+    console.log('team data error...!');
     console.error(err.message);
+    data = [];
+  }
+
+  let scheduleUrl = sportradarBaseUrl + '/teams/' + teamId +
+    '/schedule.json?api_key=' + API_KEY;
+  let optionsTwo = {
+    json: true,
+    uri: scheduleUrl,
+  };
+  let scheduleData;
+  try {
+    scheduleData = await rp(optionsTwo);
+  } catch (err) {
+    console.log('team schedule data error...!');
+    console.error(err.message);
+    scheduleData = [];
+  }
+
+  let resultUrl = sportradarBaseUrl + '/teams/' + teamId +
+    '/results.json?api_key=' + API_KEY;
+  let optionsThree = {
+    json: true,
+    uri: resultUrl,
+  };
+  let resultsData;
+  try {
+    resultsData = await rp(optionsThree);
+  } catch (err) {
+    console.log('team results data error...!');
+    console.error(err.message);
+    resultsData = [];
+  }
+
+  // let team_id = data.team.id;
+  let existing = await Soccer.team.findOne({team_id: teamId}, (err, team) => {
+    if (err) return console.error(err.message);
+    if (team) return team;
+  });
+
+  if (existing) {
+    await existing.update({
+      profile: data,
+      schedule: scheduleData.schedule,
+      results: resultsData.results,
+      last_updated: Date.now(),
+    }).exec();
+    console.log('team updated...!');
+  } else {
+    await Soccer.team.create({
+      team_id: teamId,
+      profile: data,
+      schedule: scheduleData.schedule,
+      results: resultsData.results,
+    });
+    console.log('team saved...!');
   }
   return;
 };
