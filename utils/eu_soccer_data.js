@@ -26,6 +26,20 @@ exports.saveLeagues = async () => {
         json: true,
         uri: seasonUrl,
       };
+
+      let leagueOptions = {
+        json: true,
+        uri: sportradarBaseUrl + '/tournaments/' + league.id +
+          '/info.json?api_key=' + API_KEY,
+      };
+      let leagueData;
+      try {
+        leagueData = await rp(leagueOptions);
+      } catch (err) {
+        console.log('league info api err...!');
+        console.error(err.message);
+        leagueData = [];
+      }
       let seasonData;
       try {
         let result = await rp(seasonsOptions);
@@ -35,17 +49,18 @@ exports.saveLeagues = async () => {
         console.error(err.message);
         seasonData = [];
       }
+
       let existing = await Soccer.league.findOne({league_id: league.id});
       if (existing) {
         await existing.update({
-          info: data,
+          info: leagueData,
           season: seasonData,
         }).exec();
         console.log('league updated...!');
       } else {
         let dbData = await Soccer.league.create({
           league_id: league.id,
-          info: league,
+          info: leagueData,
           seasons: seasonData,
         });
         console.log('saved data: ', dbData);
@@ -98,7 +113,7 @@ exports.savePlayers = async () => {
   return;
 };
 
-/**
+/*
  * =============================================================================
  *                               HELPER FUNCTIONS
  * =============================================================================
@@ -121,7 +136,6 @@ let startDownload = async (option, teams, counter) => {
     return;
   }
   let team = teams[counter];
-
   switch (option) {
     case 'team': {
       await getTeam(team);
@@ -228,13 +242,7 @@ let getPlayers = async (team) => {
       let data = await rp(options);
       // console.log('data: ', data);
       let playerId = data.player.id;
-      let existing = await Soccer.player.findOne(
-        {player_id: playerId},
-        (err, player) => {
-          if (err) return console.error(err.message);
-          if (player) return player;
-        }
-      );
+      let existing = await Soccer.player.findOne({player_id: playerId});
       if (existing) {
         await existing.update({
           profile: data,

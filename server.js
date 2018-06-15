@@ -70,9 +70,9 @@ db.once('open', () => {
   //   downloadAPI();
   // }, 86400000); // 1 day in ms
 
-  // // Initial download for all of the data from Sportradar API
-  // console.log('initial download started...!');
-  // downloadAPI();
+  // Initial download for all of the data from Sportradar API
+  console.log('initial download started...!');
+  downloadAPI();
 
   console.log(`Server started on: ${port}`);
 });

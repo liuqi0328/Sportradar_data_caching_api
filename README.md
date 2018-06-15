@@ -11,3 +11,8 @@ NBA_KEY=xdajwfjhbagt9hy2heqa4zak
 NFL_KEY=62xugypb95cfxdcev99m72ca
 CRICKET_KEY=h5hae7v6pc6bpaur9vsxhfz6
 ```
+
+## API Keys
+
+- To get all of the existing API Keys: send a `GET` request to `/api/v1/api_keys/` with the master API Key as a parameter.
+- To create a new API Key: send a `POST` request to `/api/v1/api_keys/` with the master API Key as a parameter.
