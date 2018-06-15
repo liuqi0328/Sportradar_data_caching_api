@@ -76,6 +76,38 @@ exports.savePlayers = async () => {
   return;
 };
 
+exports.saveSchedule = async () => {
+  let year = '2017'; // Year in 4 digit format (YYYY).
+  let season = 'REG'; // Preseason (PRE), Regular Season (REG), or Postseason (PST).
+  let option = {
+    json: true,
+    uri: sportradarBaseUrl +
+      `/games/${year}/${season}/schedule.json?api_key=${API_KEY}`,
+  };
+  let schedule;
+  try {
+    schedule = await rp(option);
+    let existing = await NBA.schedule.findOne({year: year});
+    if (existing) {
+      await existing.update({
+        data: schedule,
+        last_updated: Date.now(),
+      });
+      console.log('nba schedule updated...!');
+    } else {
+      await NBA.schedule.create({
+        year: year,
+        data: schedule,
+      });
+      console.log('nba schedule created...!');
+    }
+  } catch (error) {
+    console.log('nba schedule api error...!');
+    console.error(error);
+  }
+  return;
+};
+
 /*
  * =============================================================================
  *                               HELPER FUNCTIONS

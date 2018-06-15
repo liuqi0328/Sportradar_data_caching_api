@@ -51,6 +51,23 @@ let NBAPlayerSchema = new Schema({
   },
 });
 
+let NBAScheduleSchema = new Schema({
+  year: {
+    type: Number,
+    required: true,
+  },
+  data: Schema.Types.Mixed,
+  created_at: {
+    type: Date,
+    default: Date.now,
+  },
+  last_updated: {
+    type: Date,
+    default: Date.now,
+  },
+});
+
 exports.league = mongoose.model('NBALeague', NBALeagueSchema);
 exports.team = mongoose.model('NBATeam', NBATeamSchema);
 exports.player = mongoose.model('NBAPlayer', NBAPlayerSchema);
+exports.schedule = mongoose.model('NBASchedule', NBAScheduleSchema);

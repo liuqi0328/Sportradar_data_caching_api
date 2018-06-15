@@ -13,6 +13,7 @@ module.exports = async () => {
   // await NBAData.saveLeagues();
   // await NBAData.saveTeams();
   // await NBAData.savePlayers();
+  await NBAData.saveSchedule();
 
   console.log('download complete...!');
 };
