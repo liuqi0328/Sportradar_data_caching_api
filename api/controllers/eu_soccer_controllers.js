@@ -9,89 +9,96 @@ const errMsg = {message: 'err'};
  */
 
 exports.getLeagues = async (req, res) => {
-  console.log('get leagues...');
-  let leagues = await Soccer.league.find();
-  res.send(leagues);
+  try {
+    let leagues = await Soccer.league.find();
+    if (leagues.length < 1) res.sendStatus(404);
+    res.send(leagues);
+  } catch (err) {
+    console.error(err);
+    res.sendStatus(500);
+  }
 };
 
 exports.getOneLeague = async (req, res) => {
-  console.log('req: ', req.params);
   let option = req.params;
-  let league = await Soccer.league.findOne(option, (err, league) => {
-    if (err) res.send(errMsg);
-    return league;
-  });
-  if (!league) res.sendStatus(404);
-  res.send(league);
+  try {
+    let league = await Soccer.league.findOne(option);
+    if (!league) res.sendStatus(404);
+    res.send(league);
+  } catch (err) {
+    console.error(err);
+    res.sendStatus(500);
+  }
 };
 
 exports.getTeams = async (req, res) => {
-  console.log('get teams...');
-  let teams = await Soccer.team.find();
-  res.send(teams);
+  try {
+    let teams = await Soccer.team.find();
+    if (teams.length < 1) res.sendStatus(404);
+    res.send(teams);
+  } catch (err) {
+    console.error(err);
+    res.sendStatus(500);
+  }
 };
 
 exports.getOneTeam = async (req, res) => {
-  console.log('get one team...');
   let option = req.params;
-  let team = await findOneTeam(option);
-  if (!team) res.sendStatus(404);
-  res.send(team);
+  try {
+    let team = await Soccer.team.findOne(option);
+    if (!team) res.sendStatus(404);
+    res.send(team);
+  } catch (err) {
+    console.error(err);
+    res.sendStatus(500);
+  }
 };
 
 exports.getTeamSchedule = async (req, res) => {
-  console.log('get team schedule...');
   let option = req.params;
-  let team = await findOneTeam(option);
-  if (!team) res.sendStatus(404);
-  let teamSchedule = team.schedule;
-  res.send(teamSchedule);
+  try {
+    let team = await Soccer.team.findOne(option);
+    if (!team || !team.schedule) res.sendStatus(404);
+    let teamSchedule = team.schedule;
+    res.send(teamSchedule);
+  } catch (err) {
+    console.error(err);
+    res.sendStatus(500);
+  }
 };
 
 exports.getTeamResults = async (req, res) => {
-  console.log('get team results...');
   let option = req.params;
-  let team = await findOneTeam(option);
-  if (!team) res.sendStatus(404);
-  let teamResults = team.results;
-  res.send(teamResults);
+  try {
+    let team = await Soccer.team.findOne(option);
+    if (!team || !team.results) res.sendStatus(404);
+    let teamResults = team.results;
+    res.send(teamResults);
+  } catch (err) {
+    console.error(err);
+    res.sendStatus(500);
+  }
 };
 
 exports.getPlayers = async (req, res) => {
-  console.log('get all players...');
-  let players = await Soccer.player.find();
-  if (!players) res.sendStatus(404);
-  res.send(players);
+  try {
+    let players = await Soccer.player.find();
+    if (players.length < 1) res.sendStatus(404);
+    res.send(players);
+  } catch (err) {
+    console.error(err);
+    res.sendStatus(500);
+  }
 };
 
 exports.getOnePlayer = async (req, res) => {
-  console.log('get one player...');
   let option = req.params;
-  let player = await Soccer.player.findOne(option, (err, data) => {
-    if (err) {
-      console.log('get player from db err...!');
-      console.error(err.message);
-      res.send(errMsg);
-    }
-    return data;
-  });
-  if (!player) res.sendStatus(404);
-  res.send(player);
-};
-
-/**
- * =============================================================================
- *                              HELPER FUNCTIONS
- * =============================================================================
- */
-
-let findOneTeam = async (option) => {
-  let team = await Soccer.team.findOne(option, (err, data) => {
-    if (err) {
-      console.error(err.message);
-      return;
-    }
-    return data;
-  });
-  return team;
+  try {
+    let player = await Soccer.player.findOne(option);
+    if (!player) res.sendStatus(404);
+    res.send(player);
+  } catch (err) {
+    console.error(err);
+    res.sendStatus(500);
+  }
 };

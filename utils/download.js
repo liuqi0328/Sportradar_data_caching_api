@@ -9,10 +9,10 @@ module.exports = async () => {
   // await euSoccerData.saveTeams();
   // await euSoccerData.savePlayers();
 
-  // NBA API DATA DOWNLOAD
-  await NBAData.saveLeagues();
-  await NBAData.saveTeams();
-  await NBAData.savePlayers();
+  // // NBA API DATA DOWNLOAD
+  // await NBAData.saveLeagues();
+  // await NBAData.saveTeams();
+  // await NBAData.savePlayers();
 
   console.log('download complete...!');
 };
