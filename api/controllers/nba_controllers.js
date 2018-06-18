@@ -58,3 +58,26 @@ exports.getOnePlayer = async (req, res) => {
     res.sendStatus(500);
   }
 };
+
+exports.getSchedules = async (req, res) => {
+  try {
+    let schedules = await NBA.schedule.find();
+    if (schedules.length < 1) res.sendStatus(404);
+    res.send(schedules);
+  } catch (err) {
+    console.error(err);
+    res.sendStatus(500);
+  }
+};
+
+exports.getOneSchedule = async (req, res) => {
+  let option = req.params;
+  try {
+    let schedule = await NBA.schedule.findOne(option);
+    if (!schedule) res.sendStatus(404);
+    res.send(schedule);
+  } catch (err) {
+    console.error(err);
+    res.sendStatus(500);
+  }
+};

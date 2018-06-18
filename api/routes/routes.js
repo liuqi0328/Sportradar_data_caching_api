@@ -49,6 +49,10 @@ module.exports = (app) => {
     .get(NBA.getPlayers);
   app.route(baseApiUrl + 'nba/players/:player_id')
     .get(NBA.getOnePlayer);
+  app.route(baseApiUrl + 'nba/schedule')
+    .get(NBA.getSchedules);
+  app.route(baseApiUrl + 'nba/schedule/:year')
+    .get(NBA.getOneSchedule);
 
   // NFL ROUTES
   app.route(baseApiUrl + 'nfl/');

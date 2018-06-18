@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-let NBALeagueSchema = new Schema({
+let NFLLeagueSchema = new Schema({
   league_id: {
     type: String,
     required: true,
@@ -19,12 +19,14 @@ let NBALeagueSchema = new Schema({
   },
 });
 
-let NBATeamSchema = new Schema({
+let NFLTeamSchema = new Schema({
   team_id: {
     type: String,
     required: true,
   },
   profile: Schema.Types.Mixed,
+  roster: Schema.Types.Mixed,
+  seasonal_stats: Schema.Types.Mixed,
   created_at: {
     type: Date,
     default: Date.now,
@@ -35,7 +37,7 @@ let NBATeamSchema = new Schema({
   },
 });
 
-let NBAPlayerSchema = new Schema({
+let NFLPlayerSchema = new Schema({
   player_id: {
     type: String,
     required: true,
@@ -51,10 +53,10 @@ let NBAPlayerSchema = new Schema({
   },
 });
 
-let NBAScheduleSchema = new Schema({
+let NFLScheduleSchema = new Schema({
   year: {
-    type: Number,
-    required: true,
+   type: Number,
+   required: true,
   },
   season: {
     type: String,
@@ -71,7 +73,7 @@ let NBAScheduleSchema = new Schema({
   },
 });
 
-exports.league = mongoose.model('NBALeague', NBALeagueSchema);
-exports.team = mongoose.model('NBATeam', NBATeamSchema);
-exports.player = mongoose.model('NBAPlayer', NBAPlayerSchema);
-exports.schedule = mongoose.model('NBASchedule', NBAScheduleSchema);
+exports.league = mongoose.model('NFLLague', NFLLeagueSchema);
+exports.team = mongoose.model('NFLTeam', NFLTeamSchema);
+exports.player = mongoose.model('NFLPlayer', NFLPlayerSchema);
+exports.schedule = mongoose.model('NFLSchedule', NFLScheduleSchema);

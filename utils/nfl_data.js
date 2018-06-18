@@ -1,75 +1,67 @@
 'use strict';
 
 const rp = require('request-promise');
-const NBA = require('../api/models/nba_models');
+const NFL = require('../api/models/nfl_models');
 
-const sportradarBaseUrl = 'https://api.sportradar.us/nba/trial/v4/en';
-const API_KEY = process.env.NBA_KEY;
+const sportradarBaseUrl = 'https://api.sportradar.us/nfl-ot2';
+const API_KEY = process.env.NFL_KEY;
 
-exports.saveLeagues = async () => {
+exports. saveLeagues = async () => {
   let options = {
     json: true,
     uri: sportradarBaseUrl + `/league/hierarchy.json?api_key=${API_KEY}`,
   };
-  console.log(options);
-  let league;
+  let leagueData;
   try {
-    league = await rp(options);
-    let leagueId = league.league.id;
-    let existing = await NBA.league.findOne();
+    leagueData = await rp(options);
+    let leagueId = leagueData.league.id;
+    let existing = await NFL.league.findOne();
     if (existing) {
       await existing.update({
-        data: league,
+        data: leagueData,
         last_updated: Date.now(),
       }).exec();
-      console.log('nba league updated...!');
+      console.log('nfl league updated...!');
     } else {
-      let newData = await NBA.league.create({
+      await NFL.league.create({
         league_id: leagueId,
-        data: league,
+        data: leagueData,
       });
-      console.log('nba league saved...!', newData);
+      console.log('nfl league saved...!');
     }
-  } catch (error) {
-    console.log('get nba league data error...!');
-    console.error(error);
+  } catch (err) {
+    console.log('nfl league data error...!');
+    console.error(err);
   }
   return;
 };
 
 exports.saveTeams = async () => {
-  let league = await NBA.league.findOne();
+  let league = await NFL.league.findOne();
   while (!league) {
-    console.log('waiting for nba league data to download...');
-    league = await NBA.league.findOne();
+    console.log('waiting for nfl league data to download...');
+    league = await NFL.league.findOne();
   }
-  console.log(league);
   let conferences = league.data.conferences;
-  let eastConf = conferences[0];
-  let westConf = conferences[1];
   let teams = [];
-  eastConf.divisions.forEach((division) => {
-    division.teams.forEach((team) => {
-      teams.push(team);
+  conferences.forEach((conference) => {
+    conference.divisions.forEach((division) => {
+      division.teams.forEach((team) => {
+        teams.push(team);
+      });
     });
   });
-  westConf.divisions.forEach((division) => {
-    division.teams.forEach((team) => {
-      teams.push(team);
-    });
-  });
-  console.log(teams, teams.length);
+  console.log('teams: ', teams, teams.length);
   let counter = 0;
   await startDownload('team', teams, counter);
   return;
 };
 
 exports.savePlayers = async () => {
-  let teams = await NBA.team.find();
-  console.log(teams, teams.length);
-  while (teams.length < 30) {
-    console.log('waiting for nba teams...');
-    teams = await NBA.team.find();
+  let teams = await NFL.team.find();
+  while (teams.length < 32) {
+    console.log('waiting for nfl teams download...');
+    teams = await NFL.team.find();
   }
   let counter = 0;
   await startDownload('player', teams, counter);
@@ -87,23 +79,23 @@ exports.saveSchedule = async () => {
   let schedule;
   try {
     schedule = await rp(option);
-    let existing = await NBA.schedule.findOne({year: year, season: season});
+    let existing = await NFL.schedule.findOne({ year: year, season: season });
     if (existing) {
       await existing.update({
         data: schedule,
         last_updated: Date.now(),
       });
-      console.log('nba schedule updated...!');
+      console.log('nfl schedule updated...!');
     } else {
-      await NBA.schedule.create({
+      await NFL.schedule.create({
         year: year,
         season: season,
         data: schedule,
       });
-      console.log('nba schedule created...!');
+      console.log('nfl schedule created...!');
     }
   } catch (error) {
-    console.log('nba schedule api error...!');
+    console.log('nfl schedule api error...!');
     console.error(error);
   }
   return;
@@ -148,28 +140,28 @@ let getTeam = async (team) => {
         `/teams/${team.id}/profile.json?api_key=${API_KEY}`,
     };
     teamData = await rp(options);
-  } catch (error) {
-    console.log('nba team profile error...!');
-    console.error(error.message);
+  } catch (err) {
+    console.log('nfl team profile error...!');
+    console.error(err);
     teamData = {};
   }
 
-  let existing = await NBA.team.findOne({team_id: teamData.id});
+  let existing = await NFL.team.findOne({team_id: teamData.id});
   if (existing) {
     await existing.update({
       profile: teamData,
       last_updated: Date.now(),
     });
-    console.log('nba team updated...!');
+    console.log(`nfl team ${teamData.name} updated...!`);
   } else {
     if (teamData.id) {
-      await NBA.team.create({
+      await NFL.team.create({
         team_id: teamData.id,
         profile: teamData,
       });
-      console.log('nba team created...!');
+      console.log(`nfl team ${teamData.name} created...!`);
     } else {
-      console.log('requires team id from api...!');
+      console.log('required team id from api...!');
       console.log('error team: ', team);
       console.log('api data: ', teamData);
     }
@@ -191,23 +183,22 @@ let getPlayers = async (team) => {
       playerData = await rp(options);
     } catch (err) {
       console.log('player profile api err...!');
-      console.log(playerId, player.full_name);
+      console.log('player: ', playerId, player.name);
       console.error(err.message);
-      playerData = {};
     }
-    let existing = await NBA.player.findOne({player_id: playerId});
+    let existing = await NFL.player.findOne({player_id: playerId});
     if (existing) {
       await existing.update({
         profile: playerData,
         last_updated: Date.now(),
       }).exec();
-      console.log('nba player updated...!');
+      console.log('nfl player updated...!');
     } else {
-      await NBA.player.create({
+      await NFL.player.create({
         player_id: playerId,
         profile: playerData,
       });
-      console.log('nba player created...!');
+      console.log('nfl player created...!');
     }
   }
   return;
