@@ -8,8 +8,6 @@ const NFL = require('../controllers/nfl_controllers');
 const baseApiUrl = '/api/v1/';
 
 module.exports = (app) => {
-  // app.route(baseApiUrl);
-
   // API KEYS ROUTES
   app.route(baseApiUrl + 'api_keys')
     .get(apiKey.index)
@@ -50,7 +48,7 @@ module.exports = (app) => {
   app.get(baseApiUrl + 'nfl/teams', NFL.getTeams);
   app.get(baseApiUrl + 'nfl/teams/:team_id', NFL.getOneTeam);
   app.get(baseApiUrl + 'nfl/players', NFL.getPlayers);
-  // app.get(baseApiUrl + 'nfl/players/:player_id', NFL.getOnePlayer);
+  app.get(baseApiUrl + 'nfl/players/:player_id', NFL.getOnePlayer);
   app.get(baseApiUrl + 'nfl/schedule', NFL.getSchedules);
   app.get(baseApiUrl + 'nfl/schedule/:year', NFL.getOneSchedule);
   app.get(baseApiUrl + 'nfl/schedule/:year/seasons/:season',

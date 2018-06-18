@@ -47,6 +47,18 @@ exports.getPlayers = async (req, res) => {
   }
 };
 
+exports.getOnePlayer = async (req, res) => {
+  let option = req.params;
+  try {
+    let player = await NFL.player.findOne(option);
+    if (!player) res.sendStatus(404);
+    res.send(player);
+  } catch (err) {
+    console.error(err);
+    res.sendStatus(500);
+  }
+};
+
 exports.getSchedules = async (req, res) => {
   try {
     let schedules = await NFL.schedule.find();

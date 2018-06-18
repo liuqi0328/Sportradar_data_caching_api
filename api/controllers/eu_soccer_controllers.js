@@ -2,8 +2,6 @@
 
 const Soccer = require('../models/soccer_models');
 
-const errMsg = {message: 'err'};
-
 /*
  * TODO: SET CORRECT STATUS CODES
  */
