@@ -4,6 +4,7 @@ const apiKey = require('../controllers/api_key_controllers');
 const euSoccer = require('../controllers/eu_soccer_controllers');
 const NBA = require('../controllers/nba_controllers');
 const NFL = require('../controllers/nfl_controllers');
+const NCAAFootball = require('../controllers/ncaa_football_controllers');
 
 const baseApiUrl = '/api/v1/';
 
@@ -38,7 +39,7 @@ module.exports = (app) => {
   app.get(baseApiUrl + 'nba/players', NBA.getPlayers);
   app.get(baseApiUrl + 'nba/players/:player_id', NBA.getOnePlayer);
   app.get(baseApiUrl + 'nba/schedule', NBA.getSchedules);
-  app.get(baseApiUrl + 'nba/schedule/:year', NBA.getOneSchedule);
+  // app.get(baseApiUrl + 'nba/schedule/:year', NBA.getOneSchedule);
   app.get(baseApiUrl + 'nba/schedule/:year/seasons/:season',
           NBA.getOneSchedule);
 
@@ -50,12 +51,21 @@ module.exports = (app) => {
   app.get(baseApiUrl + 'nfl/players', NFL.getPlayers);
   app.get(baseApiUrl + 'nfl/players/:player_id', NFL.getOnePlayer);
   app.get(baseApiUrl + 'nfl/schedule', NFL.getSchedules);
-  app.get(baseApiUrl + 'nfl/schedule/:year', NFL.getOneSchedule);
+  // app.get(baseApiUrl + 'nfl/schedule/:year', NFL.getOneSchedule);
   app.get(baseApiUrl + 'nfl/schedule/:year/seasons/:season',
           NFL.getOneSchedule);
 
   // NCAA FOOTBALL ROUTES
   app.route(baseApiUrl + 'ncaa/football');
+  app.get(baseApiUrl + 'ncaa/football/league', NCAAFootball.getLeague);
+  app.get(baseApiUrl + 'ncaa/football/teams', NCAAFootball.getTeams);
+  app.get(baseApiUrl + 'ncaa/football/teams/:team_id', NCAAFootball.getOneTeam);
+  app.get(baseApiUrl + 'ncaa/football/players', NCAAFootball.getPlayers);
+  app.get(baseApiUrl + 'ncaa/football/players/:player_id', NCAAFootball.getOnePlayer);
+  app.get(baseApiUrl + 'ncaa/football/schedule', NCAAFootball.getSchedules);
+  // app.get(baseApiUrl + 'ncaa/football/schedule/:year', NCAAFootball.getOneSchedule);
+  app.get(baseApiUrl + 'ncaa/football/schedule/:year/seasons/:season',
+          NCAAFootball.getOneSchedule);
 
   // NCAA BASKETBALL ROUTES
   app.route(baseApiUrl + 'ncaa/basketball');
