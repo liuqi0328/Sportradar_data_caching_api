@@ -35,8 +35,6 @@ db.once('open', () => {
     let apiKey = req.query.api_key;
     console.log('api key: ', apiKey);
     let requestUrl = req.originalUrl;
-
-    console.log(requestUrl.startsWith('/api/v1/api_keys'));
     if (requestUrl.startsWith('/api/v1/api_keys')) {
       if (apiKey !== masterKey) {
         res.sendStatus(401);
