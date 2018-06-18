@@ -3,6 +3,7 @@
 const apiKey = require('../controllers/api_key_controllers');
 const euSoccer = require('../controllers/eu_soccer_controllers');
 const NBA = require('../controllers/nba_controllers');
+const NFL = require('../controllers/nfl_controllers');
 
 const baseApiUrl = '/api/v1/';
 
@@ -17,45 +18,43 @@ module.exports = (app) => {
 
   // EU SOCCER ROUTES
   app.route(baseApiUrl + 'soccer/eu');
-  app.route(baseApiUrl + 'soccer/eu/leagues')
-    .get(euSoccer.getLeagues);
-  app.route(baseApiUrl + 'soccer/eu/leagues/:league_id')
-    .get(euSoccer.getOneLeague);
-  app.route(baseApiUrl + 'soccer/eu/teams/')
-    .get(euSoccer.getTeams);
-  app.route(baseApiUrl + 'soccer/eu/teams/:team_id')
-    .get(euSoccer.getOneTeam);
-  app.route(baseApiUrl + 'soccer/eu/teams/:team_id/schedule')
-    .get(euSoccer.getTeamSchedule);
-  app.route(baseApiUrl + 'soccer/eu/teams/:team_id/results')
-    .get(euSoccer.getTeamResults);
-  app.route(baseApiUrl + 'soccer/eu/players/')
-    .get(euSoccer.getPlayers);
-  app.route(baseApiUrl + 'soccer/eu/players/:player_id')
-    .get(euSoccer.getOnePlayer);
+  app.get(baseApiUrl + 'soccer/eu/leagues', euSoccer.getLeagues);
+  app.get(baseApiUrl + 'soccer/eu/leagues/:league_id', euSoccer.getOneLeague);
+  app.get(baseApiUrl + 'soccer/eu/teams/', euSoccer.getTeams);
+  app.get(baseApiUrl + 'soccer/eu/teams/:team_id', euSoccer.getOneTeam);
+  app.get(baseApiUrl + 'soccer/eu/teams/:team_id/schedule',
+          euSoccer.getTeamSchedule);
+  app.get(baseApiUrl + 'soccer/eu/teams/:team_id/results',
+          euSoccer.getTeamResults);
+  app.get(baseApiUrl + 'soccer/eu/players/', euSoccer.getPlayers);
+  app.get(baseApiUrl + 'soccer/eu/players/:player_id', euSoccer.getOnePlayer);
 
   // INTL SOOCER ROUTES
   app.route(baseApiUrl + 'soccer/international');
 
   // NBA ROUTES
   app.route(baseApiUrl + 'nba/');
-  app.route(baseApiUrl + 'nba/league')
-    .get(NBA.getLeague);
-  app.route(baseApiUrl + 'nba/teams')
-    .get(NBA.getTeams);
-  app.route(baseApiUrl + 'nba/teams/:team_id')
-    .get(NBA.getOneTeam);
-  app.route(baseApiUrl + 'nba/players')
-    .get(NBA.getPlayers);
-  app.route(baseApiUrl + 'nba/players/:player_id')
-    .get(NBA.getOnePlayer);
-  app.route(baseApiUrl + 'nba/schedule')
-    .get(NBA.getSchedules);
-  app.route(baseApiUrl + 'nba/schedule/:year')
-    .get(NBA.getOneSchedule);
+  app.get(baseApiUrl + 'nba/league', NBA.getLeague);
+  app.get(baseApiUrl + 'nba/teams', NBA.getTeams);
+  app.get(baseApiUrl + 'nba/teams/:team_id', NBA.getOneTeam);
+  app.get(baseApiUrl + 'nba/players', NBA.getPlayers);
+  app.get(baseApiUrl + 'nba/players/:player_id', NBA.getOnePlayer);
+  app.get(baseApiUrl + 'nba/schedule', NBA.getSchedules);
+  app.get(baseApiUrl + 'nba/schedule/:year', NBA.getOneSchedule);
+  app.get(baseApiUrl + 'nba/schedule/:year/seasons/:season',
+          NBA.getOneSchedule);
 
   // NFL ROUTES
   app.route(baseApiUrl + 'nfl/');
+  app.get(baseApiUrl + 'nfl/league', NFL.getLeague);
+  app.get(baseApiUrl + 'nfl/teams', NFL.getTeams);
+  app.get(baseApiUrl + 'nfl/teams/:team_id', NFL.getOneTeam);
+  app.get(baseApiUrl + 'nfl/players', NFL.getPlayers);
+  // app.get(baseApiUrl + 'nfl/players/:player_id', NFL.getOnePlayer);
+  app.get(baseApiUrl + 'nfl/schedule', NFL.getSchedules);
+  app.get(baseApiUrl + 'nfl/schedule/:year', NFL.getOneSchedule);
+  app.get(baseApiUrl + 'nfl/schedule/:year/seasons/:season',
+          NFL.getOneSchedule);
 
   // NCAA FOOTBALL ROUTES
   app.route(baseApiUrl + 'ncaa/football');
