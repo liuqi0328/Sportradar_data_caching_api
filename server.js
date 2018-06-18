@@ -62,17 +62,17 @@ db.once('open', () => {
   app.listen(port);
 
   // /**
-  //  * Set interval of 1 day to initiate downloading data from Sportradar APIs and
-  //  * store them in local db.
+  //  * Set interval of 1 day to initiate downloading data from Sportradar APIs
+  //  * and store them in local db.
   //  */
   // setInterval(() => {
   //   console.log(`download started on ${Date.now()}...!`);
   //   downloadAPI();
   // }, 86400000); // 1 day in ms
 
-  // Initial download for all of the data from Sportradar API
-  console.log('initial download started...!');
-  downloadAPI();
+  // // Initial download for all of the data from Sportradar API
+  // console.log('initial download started...!');
+  // downloadAPI();
 
   console.log(`Server started on: ${port}`);
 });

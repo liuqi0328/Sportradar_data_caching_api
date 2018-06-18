@@ -230,7 +230,7 @@ let getPlayers = async (team) => {
   let players = team.profile.players;
   for (let i = 0; i < players.length; i++) {
     let player = players[i];
-    console.log(player);
+    // console.log(player);
     let playerId = player.id;
     let Url = sportradarBaseUrl + '/players/' + playerId +
       '/profile.json?api_key=' + API_KEY;
@@ -248,16 +248,16 @@ let getPlayers = async (team) => {
           profile: data,
           last_updated: Date.now(),
         }).exec();
-        console.log('player updated!');
+        console.log('eu soccer player updated!');
       } else {
         await Soccer.player.create({
           player_id: playerId,
           profile: data,
         });
-        console.log('player saved!');
+        console.log('eu soccer player saved!');
       }
     } catch (err) {
-      console.log('player data save error...!');
+      console.log('eu soccer player data save error...!');
       console.error(err.message);
     }
   }

@@ -61,7 +61,8 @@ module.exports = (app) => {
   app.get(baseApiUrl + 'ncaa/football/teams', NCAAFootball.getTeams);
   app.get(baseApiUrl + 'ncaa/football/teams/:team_id', NCAAFootball.getOneTeam);
   app.get(baseApiUrl + 'ncaa/football/players', NCAAFootball.getPlayers);
-  app.get(baseApiUrl + 'ncaa/football/players/:player_id', NCAAFootball.getOnePlayer);
+  app.get(baseApiUrl + 'ncaa/football/players/:player_id',
+          NCAAFootball.getOnePlayer);
   app.get(baseApiUrl + 'ncaa/football/schedule', NCAAFootball.getSchedules);
   // app.get(baseApiUrl + 'ncaa/football/schedule/:year', NCAAFootball.getOneSchedule);
   app.get(baseApiUrl + 'ncaa/football/schedule/:year/seasons/:season',
