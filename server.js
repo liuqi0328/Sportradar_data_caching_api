@@ -3,7 +3,7 @@
 require('dotenv').config();
 
 const express = require('express');
-const port = process.env.PORT || 1337;
+const port = process.env.PORT || 8080;
 const masterKey = process.env.MASTER_KEY;
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -59,18 +59,18 @@ db.once('open', () => {
 
   app.listen(port);
 
-  // /**
-  //  * Set interval of 1 day to initiate downloading data from Sportradar APIs
-  //  * and store them in local db.
-  //  */
-  // setInterval(() => {
-  //   console.log(`download started on ${Date.now()}...!`);
-  //   downloadAPI();
-  // }, 86400000); // 1 day in ms
+  /**
+   * Set interval of 1 day to initiate downloading data from Sportradar APIs
+   * and store them in local db.
+   */
+  setInterval(() => {
+    console.log(`download started on ${Date.now()}...!`);
+    downloadAPI();
+  }, 86400000); // 1 day in ms
 
-  // // Initial download for all of the data from Sportradar API
-  // console.log('initial download started...!');
-  // downloadAPI();
+  // Initial download for all of the data from Sportradar API
+  console.log('initial download started...!');
+  downloadAPI();
 
   console.log(`Server started on: ${port}`);
 });
