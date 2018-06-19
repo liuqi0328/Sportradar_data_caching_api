@@ -11,9 +11,9 @@ const baseApiUrl = '/api/v1/';
 module.exports = (app) => {
   // API KEYS ROUTES
   app.route(baseApiUrl + 'api_keys')
-    .get(apiKey.index)
-    .post(apiKey.create)
-    .delete(apiKey.delete);
+     .get(apiKey.index)
+     .post(apiKey.create)
+     .delete(apiKey.delete);
 
   // EU SOCCER ROUTES
   app.route(baseApiUrl + 'soccer/eu');
